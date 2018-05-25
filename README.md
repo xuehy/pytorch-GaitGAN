@@ -1,6 +1,9 @@
 # GaitGAN
 A pytorch implementation of **GaitGAN: Invariant Gait Feature Extraction Using Generative Adversarial Networks**. 
 
+```Yu, Shiqi, et al. "Gaitgan: invariant gait feature extraction using generative adversarial networks." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops. 2017.```
+
+
 # Dependency
 - ```python3```
 - ```pytorch >= 0.4.0```
