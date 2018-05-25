@@ -19,7 +19,7 @@ dataset = CASIABDatasetForTest(
     data_dir='../data/GEI_CASIA_B/gei/')
 fineSize = 64
 
-checkpoint = './snapshot_16500.t7'
+checkpoint = './snapshot_19000.t7'
 checkpoint = th.load(checkpoint)
 neta.load_state_dict(checkpoint['netA'])
 netg.load_state_dict(checkpoint['netG'])
