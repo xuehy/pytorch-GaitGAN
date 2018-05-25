@@ -140,7 +140,8 @@ while iteration < 1000000:
         al = th.cat((fake, real, ori), 2)
         display = make_grid(al, 20).cpu().numpy()
         if win1 is None:
-            win1 = vis.image(display, opts=dict(title="train", caption='train'))
+            win1 = vis.image(display,
+                             opts=dict(title="train", caption='train'))
         else:
             vis.image(display, win=win1)
     if iteration % 500 == 0:

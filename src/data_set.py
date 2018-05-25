@@ -44,27 +44,33 @@ class CASIABDataset():
             # r3 is source image
             id1 = th.randint(0, self. n_id, (1,)).item() + 1
             id1 = '%03d' % id1
-            cond1 = th.randint(0, self.n_cond, (1,)).item()
-            cond1 = int(cond1)
-            cond1 = self.cond[cond1]
+            # cond1 = th.randint(4, self.n_cond, (1,)).item()
+            # cond1 = int(cond1)
+            # cond1 = self.cond[cond1]
+            cond1 = 'nm-01'
             r1 = id1 + '/' + cond1 + '/' + id1 + '-' + \
                 cond1 + '-' + '090.png'
 
-            r2 = r1
-            while (r2 == r1):
+            id2 = id1
+            while (id2 == id1):
                 id2 = th.randint(0, self. n_id, (1,)).item() + 1
                 id2 = '%03d' % id2
-                cond2 = th.randint(0, self.n_cond, (1,)).item()
-                cond2 = int(cond2)
-                cond2 = self.cond[cond2]
+                # cond2 = th.randint(4, self.n_cond, (1,)).item()
+                # cond2 = int(cond2)
+                # cond2 = self.cond[cond2]
+                cond2 = 'nm-01'
                 r2 = id2 + '/' + cond2 + '/' + id2 + '-' + \
                     cond2 + '-' + '090.png'
             while True:
                 angle = th.randint(0, self.n_ang, (1,)).item()
                 angle = int(angle)
                 angle = self.angles[angle]
-                r3 = id1 + '/' + cond1 + '/' + id1 + '-' + \
-                    cond1 + '-' + angle + '.png'
+                cond3 = th.randint(0, self.n_cond, (1,)).item()
+                cond3 = int(cond3)
+                cond3 = self.cond[cond3]
+
+                r3 = id1 + '/' + cond3 + '/' + id1 + '-' + \
+                    cond3 + '-' + angle + '.png'
                 if os.path.exists(self.data_dir + r3):
                     break
 
@@ -102,27 +108,33 @@ class CASIABDatasetForTest():
             # r3 is source image
             id1 = th.randint(0, self. n_id, (1,)).item() + 1
             id1 = '%03d' % id1
-            cond1 = th.randint(0, self.n_cond, (1,)).item()
-            cond1 = int(cond1)
-            cond1 = self.cond[cond1]
+            # cond1 = th.randint(4, self.n_cond, (1,)).item()
+            # cond1 = int(cond1)
+            # cond1 = self.cond[cond1]
+            cond1 = 'nm-01'
             r1 = id1 + '/' + cond1 + '/' + id1 + '-' + \
                 cond1 + '-' + '090.png'
 
-            r2 = r1
-            while (r2 == r1):
+            id2 = id1
+            while (id2 == id1):
                 id2 = th.randint(0, self. n_id, (1,)).item() + 1
                 id2 = '%03d' % id2
-                cond2 = th.randint(0, self.n_cond, (1,)).item()
-                cond2 = int(cond2)
-                cond2 = self.cond[cond2]
+                # cond2 = th.randint(4, self.n_cond, (1,)).item()
+                # cond2 = int(cond2)
+                # cond2 = self.cond[cond2]
+                cond2 = 'nm-01'
                 r2 = id2 + '/' + cond2 + '/' + id2 + '-' + \
                     cond2 + '-' + '090.png'
             while True:
                 angle = th.randint(0, self.n_ang, (1,)).item()
                 angle = int(angle)
                 angle = self.angles[angle]
-                r3 = id1 + '/' + cond1 + '/' + id1 + '-' + \
-                    cond1 + '-' + angle + '.png'
+                cond3 = th.randint(0, self.n_cond, (1,)).item()
+                cond3 = int(cond3)
+                cond3 = self.cond[cond3]
+
+                r3 = id1 + '/' + cond3 + '/' + id1 + '-' + \
+                    cond3 + '-' + angle + '.png'
                 if os.path.exists(self.data_dir + r3):
                     break
 
