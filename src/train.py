@@ -40,7 +40,7 @@ neta = neta.to(device)
 netg.train()
 netd.train()
 neta.train()
-dataset = CASIABDataset(data_dir='/home/xuehongyang/data/GEI_CASIA_B/gei/')
+dataset = CASIABDataset(data_dir='../data/GEI_CASIA_B/gei/')
 
 iteration = 0
 lr = 0.0002

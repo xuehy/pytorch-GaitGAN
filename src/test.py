@@ -16,7 +16,7 @@ netg = netg.to(device)
 netd = netd.to(device)
 neta = neta.to(device)
 dataset = CASIABDatasetForTest(
-    data_dir='/home/xuehongyang/data/GEI_CASIA_B/gei/')
+    data_dir='../data/GEI_CASIA_B/gei/')
 fineSize = 64
 
 checkpoint = './snapshot_16500.t7'
