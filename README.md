@@ -27,18 +27,18 @@ The model will be saved into the execution dir every 500 iterations. YOu can cha
 - Start the visdom server with ```python3 -m visdom.server 5274``` or any port you like (change the port in train.py and test.py)
 - Open this URL in your browser: `http://localhost:5274` You will see the loss curve as well as the image examples.
 
-After 16.5k iterations, the results(every 3x1 block shows the generated side view, ground truth side view and the input view GEI in order):
+After 19k iterations, the results(every 3x1 block shows the generated side view, ground truth side view and the input view GEI in order):
 
-![16.5](https://github.com/xuehy/pytorch-GaitGAN/blob/master/train_1.png)
+![19](https://github.com/xuehy/pytorch-GaitGAN/blob/master/train19k.png)
 
 the loss curve is:
 
-![loss16.5k](https://github.com/xuehy/pytorch-GaitGAN/blob/master/curve16500.png)
+![loss19k](https://github.com/xuehy/pytorch-GaitGAN/blob/master/curve19k.png)
 
 # Testing
 
 - goto src dir and run ```python3 test.py```
 - Open this URL in your browser: `http://localhost:5274` You will see the results on the test set.
 
-After 16.5k iterations, some of the results:
-![test16.5k](https://github.com/xuehy/pytorch-GaitGAN/blob/master/test16500.png)
+After 19k iterations, some of the results:
+![test19k](https://github.com/xuehy/pytorch-GaitGAN/blob/master/test19k.png)
