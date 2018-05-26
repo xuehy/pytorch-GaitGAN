@@ -42,3 +42,14 @@ the loss curve is:
 
 After 19k iterations, some of the results:
 ![test19k](https://github.com/xuehy/pytorch-GaitGAN/blob/master/test19k.png)
+
+# Recognition
+
+The codes for recognition are also provided.
+
+The dataset setting is identical to the paper, while we only test ProbeMN here.
+
+- Goto src dir and ```mkdir transformed_28500```
+- run ```python3 generate.py```
+- run ```python3 knn_class.py```, you'll get the average accuracy with KNN(k=1) on ProbeMN.
+- run ```python3 knn_class_per_angle.py```, you'll get the results for different Gallery views and Probe views.
