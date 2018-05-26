@@ -5,6 +5,7 @@ import os
 
 
 def loadImage(path):
+    print(path)
     inImage = cv2.imread(path, 0)
     info = np.iinfo(inImage.dtype)
     inImage = inImage.astype(np.float) / info.max
@@ -145,3 +146,37 @@ class CASIABDatasetForTest():
             batch2.append(img2)
             batch3.append(img3)
         return th.stack(batch1), th.stack(batch2), th.stack(batch3)
+
+
+class CASIABDatasetGenerate():
+    def __init__(self, data_dir, cond):
+        self.data_dir = data_dir
+        self.ids = np.arange(63, 125)
+        self.angles = ['000', '018', '036', '054', '072',
+                       '108', '126', '144', '162', '180']
+        self.n_ang = len(self.angles)
+        self.cond = cond
+
+    def getbatch(self, idx, batchsize):
+        batch1 = []
+        batch3 = []
+        id1 = idx
+        id1 = '%03d' % id1
+        cond1 = self.cond
+        r1 = id1 + '/' + cond1 + '/' + id1 + '-' + \
+            cond1 + '-' + '090.png'
+        img1 = loadImage(self.data_dir + r1)
+        for angle in self.angles:
+            # r1 is GT target
+            # r2 is source image
+            r3 = id1 + '/' + cond1 + '/' + id1 + '-' + \
+                cond1 + '-' + angle + '.png'
+            if not os.path.exists(self.data_dir + r3):
+                img3 = th.from_numpy(np.zeros((64, 64))).unsqueeze(0)
+            else:
+                img3 = loadImage(self.data_dir + r3)
+            
+           
+            batch1.append(img1)
+            batch3.append(img3)
+        return  th.stack(batch1), th.stack(batch3)
